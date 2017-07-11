@@ -12,8 +12,6 @@ public class App {
     public static void main(String[] args) { //type “psvm + tab” to autocreate this
         staticFileLocation("/public");
 
-
-
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Post> posts = Post.getAll();
@@ -32,8 +30,6 @@ public class App {
             model.put("post", newPost);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
-
-
 
     }
 }
